@@ -6,6 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
-  await app.listen(3003);
+  await app.listen(
+    'https://mybloguzbackend-production.up.railway.app/' || 3003,
+  );
 }
 bootstrap();
